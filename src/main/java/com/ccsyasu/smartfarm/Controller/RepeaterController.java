@@ -1,6 +1,7 @@
 package com.ccsyasu.smartfarm.Controller;
 
 import com.ccsyasu.smartfarm.Service.HumidityService;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,8 +17,8 @@ public class RepeaterController {
     HumidityService humidityService;
 
     @PostMapping("repeater/init")
-    public String  streamData(@RequestBody Map<String, Integer> json) {
-        setHUMIDITY(json.get("humidity"));
+    public String  streamData(@RequestBody Map<String, Object> json) {
+        setHUMIDITY((Integer) json.get("humidity"));
         humidityService.initStatus();
         return "OK";
     }
