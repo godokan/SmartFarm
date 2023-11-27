@@ -27,7 +27,13 @@
     margin: 0;
     padding: 0;
 }
-.card > .card-body > div > h4 {
+.card > .card-body > .col-md-10 > img {
+    width: 300px;
+    height: 300px;
+}
+
+.card > .card-body > div > h4,
+.card > .card-body > div > .card > h4 {
     width: 100%;
     height: auto;
     display: block;
@@ -43,4 +49,8 @@
     font-size: 25px;
     color: #67b168;
     margin: 10px 0 10px 0;
+}
+.card > .card-body > div > .card {
+    background-color: #F0F0F0;
+    border-color: #2E2E2E;
 }

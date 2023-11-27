@@ -1,6 +1,6 @@
 {{>layout/header}}
 
-<link rel="stylesheet" href="/static/css/smartfarm.css">
+<link rel="stylesheet" href="/css/smartfarm.css">
 </head>
 <body>
 
@@ -20,16 +20,23 @@
                 <div class="card-body">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <img src="static/images/smartfarm.jpg" class="center-block"/>
+                        <img src="/images/smartfarm.jpg" class="center-block"/>
                         <h4 class="plant-name">
                             {{name}}
                         </h4>
-                        <h4 class="humidity">
-                            {{humidity}}
+                        <h4 class="days">
+                            {{proper_name}}와 함께 한 지 {{d-day}}일째
                         </h4>
-                        <h4 class="soil">
-                            {{status}}
-                        </h4>
+                        <div class="card">
+                            <h4 class="humidity">
+                                현재 습도 : {{humidity}}
+                            </h4>
+                            <h4 class="soil">
+                                현재 토양 상태 : {{status}}
+                            </h4>
+                        </div>
+                        <hr/>
+
                     </div>
                     <div class="col-md-1"></div>
                 </div>
