@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import static com.ccsyasu.smartfarm.HumidityINFO.getHUMIDITY;
 import static com.ccsyasu.smartfarm.HumidityINFO.getSTATUS;
 
@@ -12,9 +14,12 @@ import static com.ccsyasu.smartfarm.HumidityINFO.getSTATUS;
 public class ClientController {
     @Autowired
     HumidityService humidityService;
-
+    @RequestMapping("/")
+    public String toIndex() {
+        return "redirect:index";
+    }
     @GetMapping("/index")
-    public String test(Model model) {
+    public String index(Model model) {
 
         model.addAttribute("name", "바모 (스위트 바질)");
         model.addAttribute("proper_name", "바모");
