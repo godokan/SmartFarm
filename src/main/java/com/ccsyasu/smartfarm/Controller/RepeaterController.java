@@ -1,7 +1,6 @@
 package com.ccsyasu.smartfarm.Controller;
 
 import com.ccsyasu.smartfarm.Service.HumidityService;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
