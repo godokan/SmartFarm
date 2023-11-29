@@ -5,12 +5,13 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.ccsyasu.smartfarm.HumidityINFO.getHUMIDITY;
-import static com.ccsyasu.smartfarm.HumidityINFO.setSTATUS;
+import static com.ccsyasu.smartfarm.HumidityINFO.*;
 
 @Service
 public class HumidityService {
     public void initStatus() {
+        updateDate();
+
         Integer current = getHUMIDITY();
 
         if (current < 20) setSTATUS("물 보충 필요함");
